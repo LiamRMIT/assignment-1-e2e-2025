@@ -3,8 +3,9 @@ name: Notes Application CI Pipeline
 # remember to commit often
 
 on:
-  branches:
-    - "**"
+  push:
+    branches:
+      - "**"
 
 jobs:
   e2e:
