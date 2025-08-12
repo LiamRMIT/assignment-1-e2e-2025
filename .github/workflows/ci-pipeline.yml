@@ -20,19 +20,19 @@ jobs:
       run: |
         cd src
         npm ci
-    - name: Install missing dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          fonts-ubuntu \
-          fonts-unifont \
-          libicu-dev \
-          libvpx6 \
-          libwebp6
+    # - name: Install missing dependencies
+    #   run: |
+    #     sudo apt-get update
+    #     sudo apt-get install -y \
+    #       fonts-ubuntu \
+    #       fonts-unifont \
+    #       libicu-dev \
+    #       libvpx6 \
+    #       libwebp6
     - name: Install Playwright Browsers
       run: |
         cd src
-        npx playwright install --with-deps
+        npx playwright install
     - name: Start MongoDB
       uses: supercharge/mongodb-github-action@1.12.0
     - name: Run e2e Tests
